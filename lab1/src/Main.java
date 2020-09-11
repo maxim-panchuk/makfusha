@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.text.DecimalFormat;
 public class Main {
     public static void main(String[] args){
         int[] g = new int[14];
@@ -6,7 +7,6 @@ public class Main {
         for (int i = 0; i < g.length; i++) {
             g[i] = m;
             m--;
-            System.out.println(g[i]);
         }
 
         double[] x = new double[20];
@@ -15,7 +15,6 @@ public class Main {
 
         for (int i = 0; i < x.length; i++) {
             x[i] = (double)(Math.random() * (max - min)) + min;
-            System.out.println(x[i]);
         }
 
         double[][] d = new double[14][20];
@@ -45,10 +44,12 @@ public class Main {
                         d[i][j] = (Math.cos(Math.pow(2 * Math.asin((x[j] + 2) / 18), 3)) - 0.75) / 2;
             }
         }
-
+        double k;
         for (int i = 0; i < 14; i++) {
             for (int j = 0; j < 20; j++){
-                System.out.println(d[i][j]);
+                k = d[i][j];
+                String formattedDouble = new DecimalFormat("#0.000").format(k);
+                System.out.println(formattedDouble);
             }
         }
 
